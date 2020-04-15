@@ -21,3 +21,9 @@ div.forEach(element => {
         }
     }, false);
 });
+
+const fixedBgImage = document.querySelector('.fixed-bg-image')
+
+window.onload = () => {
+    fixedBgImage.style.top = '0'
+};

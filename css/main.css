@@ -540,7 +540,7 @@ fieldset {
   }
 }
 * {
-  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-family: montserrat, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -593,6 +593,19 @@ h6 {
   flex-wrap: wrap;
 }
 
+.fixed-bg-image {
+  background-image: url(../assets/images/rest.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: -4vh;
+  z-index: -1;
+  animation: fadeIn ease 1.5s;
+  transition: all 0.5s;
+}
+
 nav {
   height: 10vh;
   width: 100vw;
@@ -611,7 +624,7 @@ nav {
 
 .menu a {
   display: flex;
-  width: 65px;
+  width: 75px;
   justify-content: space-between;
 }
 
@@ -638,45 +651,48 @@ nav {
   color: #fff;
 }
 
-* {
-  padding: 0;
-  margin: 0;
+.logo {
+  font-weight: 600;
+  font-size: 1.2em;
+  transition: all 0.2s;
+  letter-spacing: 2px;
+}
+.logo:hover {
+  letter-spacing: 5px;
+  transition: all 0.2s;
 }
 
-.fixed-bg-image {
-  background-image: url(../images/rest.jpeg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: -1;
-  animation: fadeIn ease 4s;
+body {
+  font-family: montserrat, sans-serif;
 }
 
 section {
   padding-top: 100vh;
-  height: 100vh;
+  height: 300vh;
 }
 
-.wrapper {
+.main-wrapper {
+  padding-top: 10vh;
   height: 100vh;
   background-color: #f3f3f3;
 }
 
 .box {
-  height: 50vh;
-  width: 50vw;
+  height: 65vh;
+  width: 30vw;
   margin: 10vh 0 0 20vw;
   transition: 0.5s ease-in-out;
-  background-color: yellow;
+  background-color: #F8DC28;
+  background-image: url(../assets/images/Berlin9.JPG);
+  background-position: center;
+  background-size: cover;
 }
 
 .child-box {
-  height: 50vh;
-  width: 50vw;
+  height: 65vh;
+  width: 30vw;
   transition: 0.5s ease-in-out;
-  background-color: green;
+  background-color: #C10E1A;
 }
 
 /*# sourceMappingURL=main.css.map */

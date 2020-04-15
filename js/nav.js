@@ -1,12 +1,11 @@
+let baseYellow = '#F8DC28'
 const navElement = document.querySelector("nav");
 let navLinks = document.querySelectorAll('.change-on-scroll')
-console.log(navLinks)
 
 let myScrollFunc = () => {
     let y = window.scrollY;
     if (y >= 800) {
-        console.log(navElement)
-        navElement.style.background = 'rgba(233, 218, 0, 1)'
+        navElement.style.background = baseYellow
         navLinks.forEach(element => {
             element.style.color = '#000'
         });
