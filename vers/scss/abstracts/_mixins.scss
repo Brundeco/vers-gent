@@ -1,0 +1,56 @@
+//Display flex
+@mixin flex-col() {
+  display: flex;
+  flex-direction: column;
+  @content;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+  @content;
+}
+
+@mixin default-section-title-yellow {
+  font-family: $decorative-font;
+  color: $base-yellow;
+  font-size: 6em;
+  line-height: 0.8em;
+  font-weight: 300;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+@mixin default-section-title-red {
+  font-family: $decorative-font;
+  color: $base-red;
+  font-size: 6em;
+  line-height: 0.8em;
+  font-weight: 300;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+@mixin small-bold-title-caps {
+  font-family: $base-font;
+  font-size: 1.3em;
+  line-height: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin small-bold-title-lowercase {
+  font-family: $base-font;
+  font-size: 1em;
+  line-height: 0.8em;
+  font-weight: 600;
+  // text-transform: capitalize;
+}
+
+@mixin triangle-shape {
+  height: 30%;
+  width: 25%;
+  background: $base-bg-color;
+  z-index: 1;
+  position: absolute;
+}

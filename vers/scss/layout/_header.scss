@@ -1,0 +1,44 @@
+nav {
+  height: 10vh;
+  width: 100vw;
+  position: fixed;
+  transition: $fast-transition;
+}
+
+.nav-wrapper {
+//   max-width: 1200px;
+  height: 100%;
+  padding: 0 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.menu a {
+  display: flex;
+  width: 65px;
+  justify-content: space-between;
+}
+
+.menu a i {
+  padding-top: 2px;
+}
+
+.socials {
+  display: flex;
+  width: 80px;
+  justify-content: space-between;
+}
+.socials a {
+  transition: $fast-transition;
+}
+
+.socials a:hover {
+  transform: scale(1.3);
+  transition: $fast-transition;
+}
+
+.change-on-scroll{
+    color: #fff;
+}
