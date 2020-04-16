@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 <section>
     <div class="main-wrapper">
         <div class="box">
@@ -11,6 +12,8 @@
             <div class="child-box"></div>
         </div>
     </div>
+
+    {{-- <img src="{{asset('images/header.jpg')}}"> --}}
 
 </section>
 @endsection

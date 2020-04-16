@@ -1,6 +1,5 @@
 var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
-    console.log(bounding.top)
     return (
         bounding.top <= 600
         // &&
@@ -25,7 +24,6 @@ child.forEach(element => {
 });
 
 var parent = document.querySelectorAll('.box');
-console.log(parent)
 parent.forEach(element => {
     window.addEventListener('scroll', function (event) {
         if (isInViewport(element)) {

@@ -19362,7 +19362,6 @@ window.addEventListener("scroll", myScrollFunc);
 
 var isInViewport = function isInViewport(elem) {
   var bounding = elem.getBoundingClientRect();
-  console.log(bounding.top);
   return bounding.top <= 600 // &&
   // bounding.left >= 0 &&
   // bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
@@ -19383,7 +19382,6 @@ child.forEach(function (element) {
   }, false);
 });
 var parent = document.querySelectorAll('.box');
-console.log(parent);
 parent.forEach(function (element) {
   window.addEventListener('scroll', function (event) {
     if (isInViewport(element)) {

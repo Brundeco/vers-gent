@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/home');
-});
+// Home routes
+Route::get('/', 'HomeController@index');
+
+
+// Products info routes
+Route::get('/products', 'ProductsController@index');
+Route::get('/products/{id}/show', 'ProductsController@show');
+
+Route::get('/products/create','ProductsController@create');
+Route::post('/products', 'ProductsController@store');
+
+Route::get('/products/{id}/edit','ProductsController@edit');
+Route::put('/products', 'ProductsController@update');
