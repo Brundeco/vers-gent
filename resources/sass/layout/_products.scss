@@ -1,0 +1,71 @@
+textarea {
+    display: block;
+}
+
+.product-card {
+    width: 70vw;
+    height: 50vh;
+    margin: 0 auto;
+    position: relative;
+    margin: 20vh auto;
+    &:hover {
+        .color-layer {
+            width: 100%;
+            transition: $base-transition;
+        }
+        .product-image {
+            left: -0.5%;
+            transition: $base-transition;
+        }
+        .product-slug {
+            right: -0.5%;
+            transition: $base-transition;
+        }
+    }
+}
+
+.product-image {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: $base-transition;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.color-layer {
+    width: 0;
+    height: 100%;
+    background: $base-yellow;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: $base-transition;
+}
+
+.product-slug {
+    width: 50%;
+    height: 90%;
+    position: absolute;
+    right: 0;
+    bottom: -5%;
+    background: $base-white;
+    display: flex;
+    padding: 5% 10% 5% 4%;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: $base-transition;
+}
+
+.product-slug h2 {
+   font-weight: 700;
+   font-size: 1.5em;
+   z-index: 2;
+}

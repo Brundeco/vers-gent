@@ -2,8 +2,10 @@
 
 @section('content')
 
-<div class="fixed-bg-image"></div>
-
+<div class="fixed-bg-image">
+    <img src="{{url('/images/header-home.jpg')}}" alt="">
+</div>
+{{-- {{ dump(Request::segment(1) ) }} --}}
 <section>
     <div class="main-wrapper">
         <div class="box">
@@ -14,8 +16,6 @@
             <div class="child-box"></div>
         </div>
     </div>
-
-    {{-- <img src="{{asset('images/header.jpg')}}"> --}}
 
 </section>
 @endsection

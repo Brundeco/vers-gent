@@ -629,6 +629,10 @@ fieldset {
   padding: 0;
 }
 
+body {
+  background: #FFFFF4;
+}
+
 li {
   list-style: none;
 }
@@ -649,7 +653,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-family: montserrat, sans-serif;
 }
 
 .justify-space-around {
@@ -673,9 +677,6 @@ h6 {
 }
 
 .fixed-bg-image {
-  background-image: url(/images/header.jpg);
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -686,11 +687,19 @@ h6 {
   transition: all 0.5s;
 }
 
+.fixed-bg-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 nav {
   height: 10vh;
   width: 100vw;
   position: fixed;
   transition: all 0.2s;
+  z-index: 1;
 }
 
 .nav-wrapper {
@@ -749,8 +758,79 @@ textarea {
   display: block;
 }
 
+.product-card {
+  width: 70vw;
+  height: 50vh;
+  margin: 0 auto;
+  position: relative;
+  margin: 20vh auto;
+}
+
+.product-card:hover .color-layer {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.product-card:hover .product-image {
+  left: -0.5%;
+  transition: all 0.5s;
+}
+
+.product-card:hover .product-slug {
+  right: -0.5%;
+  transition: all 0.5s;
+}
+
+.product-image {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.color-layer {
+  width: 0;
+  height: 100%;
+  background: #F8DC28;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.product-slug {
+  width: 50%;
+  height: 90%;
+  position: absolute;
+  right: 0;
+  bottom: -5%;
+  background: #fff;
+  display: flex;
+  padding: 5% 10% 5% 4%;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.5s;
+}
+
+.product-slug h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  z-index: 2;
+}
+
 body {
   font-family: montserrat, sans-serif;
+  background-color: #FFFFF4;
 }
 
 section {

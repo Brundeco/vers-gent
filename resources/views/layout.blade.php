@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="logo">
-                <a href="" class="change-on-scroll">VERS</a>
+                <a href="/" class="change-on-scroll">VERS</a>
             </div>
             <div class="socials">
                 <a href="https://www.facebook.com/aft.tennis/">
@@ -37,7 +37,10 @@
             </div>
         </div>
     </nav>
-    
+
+    {{-- <img src="{{ url('storage/uploads/none.jpg')}}" alt="" class="fixed-bg-image"> --}}
+
+
     @yield('content')
 
     <script src="{{ asset('js/app.js') }}"></script>

@@ -1,7 +1,4 @@
 .fixed-bg-image {
-  background-image: url(/images/header.jpg);
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -11,59 +8,66 @@
   transition: $base-transition;
 }
 
+.fixed-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 nav {
-  height: 10vh;
-  width: 100vw;
-  position: fixed;
-  transition: $fast-transition;
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    transition: $fast-transition;
+    z-index: 1;
 }
 
 .nav-wrapper {
-  height: 100%;
-  padding: 0 5vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
+    height: 100%;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .menu a {
-  display: flex;
-  width: 65px;
-  justify-content: space-between;
-  text-transform: uppercase;
-  font-size: 0.8em;
+    display: flex;
+    width: 65px;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.8em;
 }
 
 .menu a i {
-  padding-top: 2px;
+    padding-top: 2px;
 }
 
 .socials {
-  display: flex;
-  width: 80px;
-  justify-content: space-between;
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
 }
 .socials a {
-  transition: $fast-transition;
+    transition: $fast-transition;
 }
 
 .socials a:hover {
-  transform: scale(1.3);
-  transition: $fast-transition;
+    transform: scale(1.3);
+    transition: $fast-transition;
 }
 
-.change-on-scroll{
+.change-on-scroll {
     color: #fff;
 }
 
 .logo {
-  font-weight: 600;
-  font-size: 1.2em;
-  transition: $fast-transition;
-  letter-spacing: 2px;
-  &:hover {
-    letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 1.2em;
     transition: $fast-transition;
-  }
+    letter-spacing: 2px;
+    &:hover {
+        letter-spacing: 5px;
+        transition: $fast-transition;
+    }
 }

@@ -2,14 +2,28 @@
 
 @section('content')
 
-<h1>Products page</h1>
+<div class="fixed-bg-image">
+    <img src="{{url('/images/header-products.jpg')}}" alt="">
+</div>
 
-@foreach ($data as $item)
-    <p> {{ $item->slug }} </p>
-    <p> {{ $item->title }} </p>
-    <p> {{ $item->body }} </p>
-    <img src=" {{ $item->image }} " alt="">
-@endforeach
+{{-- {{ dump(Request::segment(1) ) }} --}}
+<section>
+    <div class="main-wrapper">
+        @foreach ($data as $item)
+        <a href="">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src=" {{ $item->image }} " alt="">
+                </div>
+                <div class="product-slug">
+                    <div class="color-layer"></div>
+                    <h2> {{ $item->slug }} </h2>
+                </div>
+            </div>
+        </a>
+        @endforeach
+    </div>
+</section>
 
 @yield('content')
 
