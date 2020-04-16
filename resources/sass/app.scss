@@ -1,0 +1,16 @@
+@import
+
+'base/normalize',
+'base/reset',
+
+// Variables, mixins, functions
+'abstracts/variables',
+'abstracts/functions', 
+'abstracts/mixins',
+"./abstracts/animations",
+
+'base/settings',
+
+"layout/header",
+
+"pages/home";

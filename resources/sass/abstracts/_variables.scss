@@ -1,0 +1,22 @@
+/* Colors */
+$base-red: #C10E1A;
+$base-yellow: #F8DC28;
+$base-black: #000;
+$base-white: #fff;
+$base-grey :rgb(160, 160, 160);
+
+$base-bg-color: #FFFFF4;
+$bg-color-lightgrey: #f7f7f7;
+$no-color: rgba(1,1,1,0);
+$grey-variation: #757575;
+
+/* Fonts */
+$base-font:  montserrat, sans-serif;
+$base-heading-font: "neue-haas-grotesk-display", sans-serif;
+$decorative-font: "paralucent-stencil", sans-serif;
+
+/* Transitions */
+$base-transition: all .5s;
+$fast-transition: all .2s;
+$slow-transition: all 2s;
+$bezier-transition: all .2s cubic-bezier(0.200, 0.250, 0.925, 0.470);
