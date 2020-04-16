@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('title');
             $table->text('body');
-            $table->string('src');
+            $table->string('image');
             $table->string('alt');
         });
     }

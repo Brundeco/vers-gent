@@ -629,10 +629,6 @@ fieldset {
   padding: 0;
 }
 
-body {
-  background: #FFFFF4;
-}
-
 li {
   list-style: none;
 }
@@ -747,6 +743,10 @@ nav {
 .logo:hover {
   letter-spacing: 5px;
   transition: all 0.2s;
+}
+
+textarea {
+  display: block;
 }
 
 body {

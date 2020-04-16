@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vers Gent</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
-    integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.typekit.net/tgs4bgm.css">
-    <link rel="stylesheet" href="css/app.css">
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/tgs4bgm.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
 
+<body>
     <nav>
         <div class="nav-wrapper">
             <div class="menu">
                 <a href="#" class="change-on-scroll">
                     <i class="fas fa-bars change-on-scroll"></i>
-                menu
+                    menu
                 </a>
             </div>
             <div class="logo">
@@ -36,11 +37,10 @@
             </div>
         </div>
     </nav>
-
-    <div class="fixed-bg-image"></div>
-
+    
     @yield('content')
 
-    <script src="js/app.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
+
 </html>

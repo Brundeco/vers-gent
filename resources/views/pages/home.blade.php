@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="fixed-bg-image"></div>
+
 <section>
     <div class="main-wrapper">
         <div class="box">

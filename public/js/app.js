@@ -19328,7 +19328,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('import worked ! ');
 var baseYellow = '#F8DC28';
 var navElement = document.querySelector("nav");
 var navLinks = document.querySelectorAll('.change-on-scroll');
@@ -19371,29 +19370,35 @@ var isInViewport = function isInViewport(elem) {
 
 var child = document.querySelectorAll('.child-box');
 var posArray = ['width', 'height'];
-child.forEach(function (element) {
-  window.addEventListener('scroll', function (event) {
-    if (isInViewport(element)) {
-      // console.log(posArray[randInt])
-      // console.log(div)
-      var randInt = Math.round(Math.random());
-      element.style.width = '0';
-    }
-  }, false);
-});
-var parent = document.querySelectorAll('.box');
-parent.forEach(function (element) {
-  window.addEventListener('scroll', function (event) {
-    if (isInViewport(element)) {
-      element.style.marginTop = '5vh';
-    }
-  }, false);
-});
+
+if (child != 'undefined' && child != null) {
+  child.forEach(function (element) {
+    window.addEventListener('scroll', function (event) {
+      if (isInViewport(element)) {
+        // console.log(posArray[randInt])
+        // console.log(div)
+        var randInt = Math.round(Math.random());
+        element.style.width = '0';
+      }
+    }, false);
+  });
+  var parent = document.querySelectorAll('.box');
+  parent.forEach(function (element) {
+    window.addEventListener('scroll', function (event) {
+      if (isInViewport(element)) {
+        element.style.marginTop = '5vh';
+      }
+    }, false);
+  });
+}
+
 var fixedBgImage = document.querySelector('.fixed-bg-image');
 
-window.onload = function () {
-  fixedBgImage.style.top = '0';
-};
+if (fixedBgImage != 'undefined' && fixedBgImage != null) {
+  window.onload = function () {
+    fixedBgImage.style.top = '0';
+  };
+}
 
 /***/ }),
 
