@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="form-wrapper">
-    <h2>Create article</h2>
+    <h2>Update article</h2>
     <form action="/products" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="input-wrapper">

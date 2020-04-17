@@ -19287,6 +19287,8 @@ __webpack_require__(/*! ./nav */ "./resources/js/nav.js");
 
 __webpack_require__(/*! ./revealPicture */ "./resources/js/revealPicture.js");
 
+__webpack_require__(/*! ./dynamicGrid */ "./resources/js/dynamicGrid.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19318,6 +19320,61 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/dynamicGrid.js":
+/*!*************************************!*\
+  !*** ./resources/js/dynamicGrid.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// $(document).ready(function () {
+//     var RDC = 5; // Random Div Count
+//     var minWidth = 200;
+//     var minHeight = 200;
+//     for (var i = 0; i < RDC; i++) {
+//         thisWidth = Math.floor(Math.random() * (minWidth)) + 1; //+1 to avoid 0px width
+//         thisHeight = Math.floor(Math.random() * (minHeight)) + 1; //+1 to avoid 0px height
+//         thisTop = Math.floor(Math.random() * (1000 - thisHeight)) // 1000 - thisHeight to avoid div going outside container
+//         thisLeft = Math.floor(Math.random() * (1000 - thisWidth))
+//         $('<div></div>').appendTo('#container').css({
+//             "background": "#ccc",
+//             "width": thisWidth,
+//             "height": thisHeight,
+//             "position": "absolute",
+//             "top": thisTop,
+//             "left": thisLeft,
+//             "border": "1px solid black"
+//         });
+//     }
+// })
+var divCount = 5;
+var mWidth = 900;
+var mHeight = 1000;
+var gridParent = document.querySelector('#container');
+var bgColors = ['yellow', 'green', 'blue', 'purple', 'grey', 'white', 'pink', 'orange'];
+
+if (gridParent != 'undefined' && gridParent != null) {
+  for (i = 0; i <= divCount; i++) {
+    var randColorIndex = Math.random() * (6 - 0 + 1) << 0;
+    var newWidth = Math.floor(Math.random() * mWidth) + 1;
+    var newHeight = Math.floor(Math.random() * mHeight) + 1;
+    var newTop = Math.floor(Math.random() * (1000 - newHeight));
+    var newleft = Math.floor(Math.random() * (1000 - newWidth));
+    var gridChild = document.createElement('div');
+    gridChild.className = 'gridchild';
+    gridParent.appendChild(gridChild);
+    gridParent.style.position = 'relative';
+    gridChild.style.width = newWidth + 'px';
+    gridChild.style.height = newHeight + 'px';
+    gridChild.style.top = newTop + 'px';
+    gridChild.style.left = newleft + 'px';
+    gridChild.style.background = bgColors[randColorIndex];
+    gridChild.style.border = '8px solid red';
+  }
+}
 
 /***/ }),
 
@@ -19369,16 +19426,16 @@ var isInViewport = function isInViewport(elem) {
 };
 
 var child = document.querySelectorAll('.child-box');
-var posArray = ['width', 'height'];
+var posArray = ['0', '100'];
 
 if (child != 'undefined' && child != null) {
   child.forEach(function (element) {
     window.addEventListener('scroll', function (event) {
       if (isInViewport(element)) {
         var randInt = Math.round(Math.random());
-        var propName = posArray[randInt];
-        console.log(propName);
-        element.style[propName] = '0';
+        var propName = posArray[randInt]; // console.log(propName)
+
+        element.style.height = '0';
       }
     }, false);
   });

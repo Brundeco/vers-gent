@@ -10,7 +10,7 @@ var isInViewport = function (elem) {
 };
 
 var child = document.querySelectorAll('.child-box');
-let posArray = ['width', 'height']
+let posArray = ['0', '100']
 
 if (child != 'undefined' && child != null) {
     child.forEach(element => {
@@ -18,8 +18,8 @@ if (child != 'undefined' && child != null) {
             if (isInViewport(element)) {
                 let randInt = Math.round(Math.random())
                 let propName = posArray[randInt]
-                console.log(propName)
-                element.style[propName] = '0';
+                // console.log(propName)
+                element.style.height = '0';
             }
         }, false);
     });

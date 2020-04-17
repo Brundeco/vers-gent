@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/tgs4bgm.css">
     <link rel="stylesheet" href="https://use.typekit.net/tgs4bgm.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -38,9 +39,6 @@
             </div>
         </div>
     </nav>
-
-    {{-- <img src="{{ url('storage/uploads/none.jpg')}}" alt="" class="fixed-bg-image"> --}}
-
 
     @yield('content')
 
