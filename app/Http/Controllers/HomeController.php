@@ -8,6 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('pages.home');
+        $images = \File::allFiles(public_path('images/collage'));
+
+        return view('pages.home', [
+            'images' => $images
+        ]);
     }
 }

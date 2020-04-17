@@ -16,10 +16,10 @@ if (child != 'undefined' && child != null) {
     child.forEach(element => {
         window.addEventListener('scroll', function (event) {
             if (isInViewport(element)) {
-                // console.log(posArray[randInt])
-                // console.log(div)
                 let randInt = Math.round(Math.random())
-                element.style.width = '0';
+                let propName = posArray[randInt]
+                console.log(propName)
+                element.style[propName] = '0';
             }
         }, false);
     });

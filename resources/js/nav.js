@@ -4,7 +4,8 @@ let navLinks = document.querySelectorAll('.change-on-scroll')
 
 let myScrollFunc = () => {
     let y = window.scrollY;
-    if (y >= 800) {
+    // console.log(y)
+    if (y >= 700) {
         navElement.style.background = baseYellow
         navLinks.forEach(element => {
             element.style.color = '#000'

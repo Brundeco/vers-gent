@@ -19333,9 +19333,9 @@ var navElement = document.querySelector("nav");
 var navLinks = document.querySelectorAll('.change-on-scroll');
 
 var myScrollFunc = function myScrollFunc() {
-  var y = window.scrollY;
+  var y = window.scrollY; // console.log(y)
 
-  if (y >= 800) {
+  if (y >= 700) {
     navElement.style.background = baseYellow;
     navLinks.forEach(function (element) {
       element.style.color = '#000';
@@ -19375,10 +19375,10 @@ if (child != 'undefined' && child != null) {
   child.forEach(function (element) {
     window.addEventListener('scroll', function (event) {
       if (isInViewport(element)) {
-        // console.log(posArray[randInt])
-        // console.log(div)
         var randInt = Math.round(Math.random());
-        element.style.width = '0';
+        var propName = posArray[randInt];
+        console.log(propName);
+        element.style[propName] = '0';
       }
     }, false);
   });

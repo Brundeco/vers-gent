@@ -5,17 +5,15 @@
 <div class="fixed-bg-image">
     <img src="{{url('/images/header-home.jpg')}}" alt="">
 </div>
-{{-- {{ dump(Request::segment(1) ) }} --}}
+
 <section>
     <div class="main-wrapper">
+        @foreach ($images as $item)
         <div class="box">
+            <img src="{{ url('images/collage/' . $item->getFilename()) }}">
             <div class="child-box"></div>
         </div>
-        <div class="spacer" style="height:100vw"></div>
-        <div class="box">
-            <div class="child-box"></div>
-        </div>
+        @endforeach
     </div>
-
 </section>
 @endsection
