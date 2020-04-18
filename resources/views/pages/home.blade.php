@@ -9,15 +9,15 @@
 
 <section class="home-section">
     <div class="main-wrapper">
-        {{-- <div class="dynamic-grid">
+        <div class="dynamic-grid">
             @foreach ($images as $item)
             <div class="box">
                 <img src="{{ url('images/collage/' . $item->getFilename()) }}">
                 <div class="child-box"></div>
             </div>
             @endforeach
-        </div> --}}
-        <div id="container"></div>
+        </div>
+        {{-- <div id="container"></div> --}}
     </div>
 </section>
 @endsection

@@ -15,30 +15,36 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <div class="menu">
-                <a href="#" class="change-on-scroll">
-                    <i class="fas fa-bars change-on-scroll"></i>
-                    menu
-                </a>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <div class="menu">
+                    <a href="#" class="change-on-scroll">
+                        <i class="fas fa-bars change-on-scroll"></i>
+                        menu
+                    </a>
+                </div>
+                <div class="logo">
+                    <a href="/" class="change-on-scroll">VERS</a>
+                </div>
+                <div class="socials">
+                    <a href="https://www.facebook.com/aft.tennis/">
+                        <i class="social-link fab fa-facebook-f change-on-scroll"></i>
+                    </a>
+                    <a href="https://twitter.com/aftofficiel">
+                        <i class="social-link fab fa-twitter change-on-scroll"></i>
+                    </a>
+                    <a href="http://www.aftnet.be/">
+                        <i class="social-link fab fa-instagram change-on-scroll"></i>
+                    </a>
+                </div>
             </div>
-            <div class="logo">
-                <a href="/" class="change-on-scroll">VERS</a>
-            </div>
-            <div class="socials">
-                <a href="https://www.facebook.com/aft.tennis/">
-                    <i class="social-link fab fa-facebook-f change-on-scroll"></i>
-                </a>
-                <a href="https://twitter.com/aftofficiel">
-                    <i class="social-link fab fa-twitter change-on-scroll"></i>
-                </a>
-                <a href="http://www.aftnet.be/">
-                    <i class="social-link fab fa-instagram change-on-scroll"></i>
-                </a>
-            </div>
+        </nav>
+        <div class="scroll-down">
+            <p>Scroll voor meer</p>
+            <div class="loading"></div>
         </div>
-    </nav>
+    </header>
 
     @yield('content')
 
