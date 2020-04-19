@@ -988,24 +988,22 @@ h6 {
   font-family: "adobe-garamond-pro", serif;
 }
 
-.justify-space-around {
-  justify-content: space-around;
-}
+@media (any-pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+  }
 
-.justify-center {
-  justify-content: center;
-}
-
-.justify-space-between {
-  justify-content: space-between;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
+  .cursor__inner {
+    fill: rgba(238, 202, 0, 0.8);
+    stroke: none;
+    stroke-width: 1px;
+    mix-blend-mode: screen;
+  }
 }
 
 .fixed-bg-image {
@@ -1035,7 +1033,7 @@ h6 {
 }
 
 nav {
-  height: 10vh;
+  height: 17vh;
   width: 100vw;
   position: fixed;
   transition: all 0.2s;
@@ -1303,6 +1301,7 @@ textarea {
 body {
   font-family: montserrat, sans-serif;
   background-color: #FFFFF4;
+  cursor: none !important;
 }
 
 .home-section {

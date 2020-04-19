@@ -33,23 +33,19 @@ h6 {
   font-family: $base-heading-font;
 }
 
-
-.justify-space-around {
-  justify-content: space-around;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-space-between {
-  justify-content: space-between;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
+@media (any-pointer: fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+		opacity: 0;
+	}
+	.cursor__inner {
+		fill: rgba(238, 202, 0, 0.8);
+		stroke: none;
+    stroke-width: 1px;
+    mix-blend-mode: screen;
+	}
 }
