@@ -38,8 +38,8 @@ export default class Cursor extends EventEmitter {
         this.listen();
 
         this.onMouseMoveEv = () => {
-            this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2;
-            this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height / 2;
+            // this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2;
+            // this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height / 2;
             gsap.to(this.DOM.el, { duration: 0.9, ease: 'Power3.easeOut', opacity: 1 });
             requestAnimationFrame(() => this.render());
             window.removeEventListener('mousemove', this.onMouseMoveEv);
@@ -47,6 +47,7 @@ export default class Cursor extends EventEmitter {
         window.addEventListener('mousemove', this.onMouseMoveEv);
     }
     render() {
+        // console.log(this.bounds)
         this.renderedStyles['tx'].current = mouse.x - this.bounds.width / 2;
         this.renderedStyles['ty'].current = mouse.y - this.bounds.height / 2;
 
@@ -99,3 +100,10 @@ const cursor = new Cursor(document.querySelector('.cursor'));
     el.addEventListener('mouseenter', () => cursor.emit('enter'));
     el.addEventListener('mouseleave', () => cursor.emit('leave'));
 });
+
+
+// const cursor = document.querySelector('.cursor')
+
+// document.addEventListener('mousemove', e => {
+//     cursor.setAttribute("style", "top: " + (e.pageY - scrollY) + "px; left: " + (e.pageX) + "px")
+// })

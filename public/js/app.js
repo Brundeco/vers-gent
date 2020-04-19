@@ -25386,8 +25386,8 @@ var Cursor = /*#__PURE__*/function (_EventEmitter) {
     _this.listen();
 
     _this.onMouseMoveEv = function () {
-      _this.renderedStyles.tx.previous = _this.renderedStyles.tx.current = mouse.x - _this.bounds.width / 2;
-      _this.renderedStyles.ty.previous = _this.renderedStyles.ty.previous = mouse.y - _this.bounds.height / 2;
+      // this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2;
+      // this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height / 2;
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(_this.DOM.el, {
         duration: 0.9,
         ease: 'Power3.easeOut',
@@ -25408,6 +25408,7 @@ var Cursor = /*#__PURE__*/function (_EventEmitter) {
     value: function render() {
       var _this2 = this;
 
+      // console.log(this.bounds)
       this.renderedStyles['tx'].current = mouse.x - this.bounds.width / 2;
       this.renderedStyles['ty'].current = mouse.y - this.bounds.height / 2;
 
@@ -25485,7 +25486,10 @@ _toConsumableArray(document.querySelectorAll('a')).forEach(function (el) {
   el.addEventListener('mouseleave', function () {
     return cursor.emit('leave');
   });
-});
+}); // const cursor = document.querySelector('.cursor')
+// document.addEventListener('mousemove', e => {
+//     cursor.setAttribute("style", "top: " + (e.pageY - scrollY) + "px; left: " + (e.pageX) + "px")
+// })
 
 /***/ }),
 
@@ -25560,11 +25564,13 @@ var myScrollFunc = function myScrollFunc() {
 
   if (y >= 700) {
     navElement.style.background = baseYellow;
+    navElement.style.height = '8vh';
     navLinks.forEach(function (element) {
       element.style.color = '#000';
     });
   } else {
     navElement.style.background = 'rgba(50, 50, 50, 0)';
+    navElement.style.height = '15vh';
     navLinks.forEach(function (element) {
       element.style.color = '#fff';
     });
@@ -25662,8 +25668,9 @@ var getMousePos = function getMousePos(e) {
   if (!e) e = window.event;
 
   if (e.pageX || e.pageY) {
-    posx = e.pageX;
-    posy = e.pageY;
+    posx = e.pageX; // ( -scrollY added here to fix wrong mouse position at page scroll )
+
+    posy = e.pageY - scrollY;
   } else if (e.clientX || e.clientY) {
     posx = e.clientX + body.scrollLeft + document.documentElement.scrollLeft;
     posy = e.clientY + body.scrollTop + document.documentElement.scrollTop;

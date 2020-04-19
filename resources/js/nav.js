@@ -7,11 +7,13 @@ let myScrollFunc = () => {
     // console.log(y)
     if (y >= 700) {
         navElement.style.background = baseYellow
+        navElement.style.height = '8vh'
         navLinks.forEach(element => {
             element.style.color = '#000'
         });
     } else {
         navElement.style.background = 'rgba(50, 50, 50, 0)'
+        navElement.style.height = '15vh'
         navLinks.forEach(element => {
             element.style.color = '#fff'
         });

@@ -15,7 +15,8 @@ const getMousePos = (e) => {
     if (!e) e = window.event;
     if (e.pageX || e.pageY) {
         posx = e.pageX;
-        posy = e.pageY;
+        // ( -scrollY added here to fix wrong mouse position at page scroll )
+        posy = e.pageY - scrollY;
     }
     else if (e.clientX || e.clientY) {
         posx = e.clientX + body.scrollLeft + document.documentElement.scrollLeft;

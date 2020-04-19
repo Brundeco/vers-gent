@@ -40,7 +40,8 @@ h6 {
 		left: 0;
 		display: block;
 		pointer-events: none;
-		opacity: 0;
+    opacity: 0;
+    z-index: 2000;
 	}
 	.cursor__inner {
 		fill: rgba(238, 202, 0, 0.8);

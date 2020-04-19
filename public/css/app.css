@@ -996,6 +996,7 @@ h6 {
     display: block;
     pointer-events: none;
     opacity: 0;
+    z-index: 2000;
   }
 
   .cursor__inner {
@@ -1033,7 +1034,7 @@ h6 {
 }
 
 nav {
-  height: 17vh;
+  height: 15vh;
   width: 100vw;
   position: fixed;
   transition: all 0.2s;
@@ -1137,6 +1138,26 @@ nav {
   transform: scaleX(0);
   -webkit-animation: animate 1.6s cubic-bezier(1, 0, 0, 1) infinite;
           animation: animate 1.6s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+.menu-parent {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.menu-child {
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #F8DC28;
+  z-index: 11;
 }
 
 .fixed-product-detail-image {
