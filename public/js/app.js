@@ -25578,6 +25578,34 @@ var myScrollFunc = function myScrollFunc() {
 };
 
 window.addEventListener("scroll", myScrollFunc);
+var toggleMenuIn = document.querySelector('.toggle-menu-in');
+var toggleMenuInText = document.querySelector('.toggle-menu-in-el');
+var toggleMenuOut = document.querySelector('.toggle-menu-out');
+var menuParent = document.querySelector('.menu-parent');
+var menuChild = document.querySelector('.menu-child');
+
+var fadeInMenu = function fadeInMenu() {
+  menuParent.style.background = 'rgba(0, 0, 0, 0.4)';
+  menuParent.style.pointerEvents = 'all';
+  menuChild.style.width = '30vw';
+  toggleMenuInText.style.opacity = '0';
+  toggleMenuOut.style.display = 'block';
+  toggleMenuOut.style.color = 'rgba(0,0,0,1)';
+  console.log('fade in menu please');
+};
+
+var fadeOutMenu = function fadeOutMenu() {
+  menuParent.style.background = 'rgba(0, 0, 0, 0)';
+  menuParent.style.pointerEvents = 'none';
+  menuChild.style.width = '0vw';
+  toggleMenuInText.style.opacity = '1';
+  toggleMenuOut.style.color = 'rgba(0,0,0,0)';
+  toggleMenuOut.style.display = 'none';
+  console.log('time to fade out !');
+};
+
+toggleMenuIn.addEventListener('click', fadeInMenu);
+toggleMenuOut.addEventListener('click', fadeOutMenu);
 
 /***/ }),
 

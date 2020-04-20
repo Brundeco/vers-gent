@@ -1050,7 +1050,7 @@ nav {
   margin: 0 auto;
 }
 
-.menu a {
+.toggle-menu a {
   display: flex;
   width: 65px;
   justify-content: space-between;
@@ -1058,7 +1058,7 @@ nav {
   font-size: 0.8em;
 }
 
-.menu a i {
+.toggle-menu a i {
   padding-top: 2px;
 }
 
@@ -1145,19 +1145,77 @@ nav {
   height: 100vh;
   position: fixed;
   top: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
   z-index: 10;
+  transition: all 0.2s;
+  pointer-events: none;
 }
 
 .menu-child {
-  width: 20vw;
+  width: 0vw;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   background-color: #F8DC28;
   z-index: 11;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.toggle-menu-in {
+  padding: 2%;
+  display: block;
+}
+
+.toggle-menu-out {
+  color: rgba(0, 0, 0, 0);
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 2% 2% 2% 0;
+  display: none;
+}
+
+span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+span:before,
+span:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #000;
+}
+
+span:before {
+  left: -2.5px;
+}
+
+span:after {
+  right: 2.5px;
+  background: #000;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:before {
+  background: #000;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
 }
 
 .fixed-product-detail-image {

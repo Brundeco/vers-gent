@@ -21,24 +21,25 @@
         </div>
         <nav>
             <div class="nav-wrapper">
-                <div class="socials">
-                    <a href="https://www.facebook.com/aft.tennis/">
-                        <i class="social-link fab fa-facebook-f change-on-scroll"></i>
-                    </a>
-                    <a href="https://twitter.com/aftofficiel">
-                        <i class="social-link fab fa-twitter change-on-scroll"></i>
-                    </a>
-                    <a href="http://www.aftnet.be/">
-                        <i class="social-link fab fa-instagram change-on-scroll"></i>
-                    </a>
-                </div>
+                <a class="toggle-menu-in">
+                    <div class="toggle-menu-in-el change-on-scroll">
+                        <i class="fas fa-bars change-on-scroll"></i>
+                        Menu
+                    </div>
+                </a>
+                <a class="toggle-menu-out"><span>close </span></a>
                 <div class="logo">
                     <a href="/" class="change-on-scroll">VERS</a>
                 </div>
-                <div class="menu">
-                    <a href="#" class="change-on-scroll">
-                        <i class="fas fa-bars change-on-scroll"></i>
-                        menu
+                <div class="socials">
+                    <a href="">
+                        <i class="social-link fab fa-facebook-f change-on-scroll"></i>
+                    </a>
+                    <a href="">
+                        <i class="social-link fab fa-twitter change-on-scroll"></i>
+                    </a>
+                    <a href="">
+                        <i class="social-link fab fa-instagram change-on-scroll"></i>
                     </a>
                 </div>
             </div>

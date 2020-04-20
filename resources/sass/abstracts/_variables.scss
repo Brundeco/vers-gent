@@ -19,4 +19,5 @@ $decorative-font: montserrat, sans-serif;
 $base-transition: all .5s;
 $fast-transition: all .2s;
 $slow-transition: all 2s;
+$smooth-transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 $bezier-transition: all .2s cubic-bezier(0.200, 0.250, 0.925, 0.470);
