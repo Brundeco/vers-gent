@@ -25555,25 +25555,27 @@ if (gridParent != 'undefined' && gridParent != null) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var baseYellow = '#F8DC28';
+var replaceColor = '#1C3B2E';
 var navElement = document.querySelector("nav");
+var scrollAnimation = document.querySelector('.scroll-down');
+console.log(scrollAnimation);
 var navLinks = document.querySelectorAll('.change-on-scroll');
 
 var myScrollFunc = function myScrollFunc() {
   var y = window.scrollY; // console.log(y)
 
+  y >= 50 ? scrollAnimation.style.display = 'none' : scrollAnimation.style.display = 'flex';
+
   if (y >= 700) {
-    navElement.style.background = baseYellow;
-    navElement.style.height = '8vh';
-    navLinks.forEach(function (element) {
-      element.style.color = '#000';
-    });
+    navElement.style.background = replaceColor;
+    navElement.style.height = '12vh'; // navLinks.forEach(element => {
+    //     element.style.color = '#000'
+    // });
   } else {
     navElement.style.background = 'rgba(50, 50, 50, 0)';
-    navElement.style.height = '15vh';
-    navLinks.forEach(function (element) {
-      element.style.color = '#fff';
-    });
+    navElement.style.height = '15vh'; // navLinks.forEach(element => {
+    //     element.style.color = '#fff'
+    // });
   }
 };
 
@@ -25583,29 +25585,41 @@ var toggleMenuInText = document.querySelector('.toggle-menu-in-el');
 var toggleMenuOut = document.querySelector('.toggle-menu-out');
 var menuParent = document.querySelector('.menu-parent');
 var menuChild = document.querySelector('.menu-child');
+var bodyEl = document.querySelector('body');
+var opacityLinks = document.querySelectorAll('.opacity-link');
+console.log(opacityLinks);
 
 var fadeInMenu = function fadeInMenu() {
-  menuParent.style.background = 'rgba(0, 0, 0, 0.4)';
+  menuParent.style.background = 'rgba(143, 185, 168, 0.3)';
   menuParent.style.pointerEvents = 'all';
   menuChild.style.width = '30vw';
   toggleMenuInText.style.opacity = '0';
   toggleMenuOut.style.display = 'block';
   toggleMenuOut.style.color = 'rgba(0,0,0,1)';
-  console.log('fade in menu please');
+  bodyEl.style.overflow = 'hidden';
+  opacityLinks.forEach(function (element) {
+    element.style.display = 'block';
+  });
+  console.log(opacityLinks);
 };
 
 var fadeOutMenu = function fadeOutMenu() {
-  menuParent.style.background = 'rgba(0, 0, 0, 0)';
+  menuParent.style.background = 'rgba(143, 185, 168, 0)';
   menuParent.style.pointerEvents = 'none';
   menuChild.style.width = '0vw';
   toggleMenuInText.style.opacity = '1';
   toggleMenuOut.style.color = 'rgba(0,0,0,0)';
   toggleMenuOut.style.display = 'none';
-  console.log('time to fade out !');
+  bodyEl.style.overflow = 'auto';
+  opacityLinks.forEach(function (element) {
+    element.style.display = 'none';
+  });
 };
 
 toggleMenuIn.addEventListener('click', fadeInMenu);
 toggleMenuOut.addEventListener('click', fadeOutMenu);
+var hiddenFieldVal = document.querySelector('#pageMeta');
+hiddenFieldVal.value === 'hide' ? navElement.style.opacity = '0' : navElement.style.opacity = '1';
 
 /***/ }),
 

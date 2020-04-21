@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+
 use App\Product;
 
 class ProductsController extends Controller
@@ -17,9 +19,11 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Route $route)
     {
-        return view('products.create');
+        return view('products.create',[
+            'hide'=> 'hide'
+        ]);
     }
 
     public function store()
@@ -52,7 +56,8 @@ class ProductsController extends Controller
         $product = Product::find($id);
         
         return view('products.edit', [
-            'product' => $product
+            'product' => $product,
+            'hide'=> 'hide'
         ]);
     }
 }

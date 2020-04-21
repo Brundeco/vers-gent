@@ -1,55 +1,87 @@
 body {
-  font-family: $base-font;
-  background-color: $base-bg-color;
-  cursor: none !important;
+    font-family: $base-font;
+    background-color: $base-bg-color;
+    cursor: none !important;
 }
 
 .home-section {
-  padding-top: 100vh;
+    padding-top: 100vh;
 }
 
 .main-wrapper {
-  padding-top: 10vh;
-  min-height: 100vh;
-  background-color: #f3f3f3;
+    padding-top: 10vh;
+    min-height: 100vh;
+    background-color: #f3f3f3;
 }
 
-.dynamic-grid {
-  display: flex;
-  flex-wrap: wrap;
+// .box {
+//   max-height: 30vh;
+//   max-width: 20vw;
+//   margin: 10vh 10vw;
+//   transition: $slow-transition;
+//   background-color: $base-yellow;
+//   background-position: center;
+//   background-size: cover;
+//   position: relative;
+// }
+
+// .box img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+#grid {
+    padding: 20vh 0;
+    display: grid;
+    grid-template-columns: repeat(8, 0% 1fr);
+    grid-gap: 10px;
+    grid-template-rows: 50vh 50vh;
 }
 
-.box {
-  max-height: 30vh;
-  max-width: 20vw;
-  margin: 10vh 10vw;
-  transition: $slow-transition;
-  background-color: $base-yellow;
-  background-position: center;
-  background-size: cover;
+.g-row-1 {
+    grid-column: 3/9;
+    grid-row: 1;
+    position: relative;
+}
+
+.g-row-2 {
+  margin-top: -10vh;
+  margin-bottom: 10vh;
+  grid-column: 12/16;
+  grid-row: 2;
+  position: relative;
   position: relative;
 }
 
+.g-row-3 {
+  grid-column: 2/6;
+  grid-row: 2;
+  margin-top: 20vh;
+  position: relative;
+}
+
+.box {
+    height: 100%;
+    width: 100%;
+    transition: $slow-transition;
+    background-color: $base-yellow;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
 .box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .child-box {
-  height: 100%;
-  width: 100%;
-  transition: $base-transition;
-  background-color: $base-red;
-  position: absolute;
-  top: 0;
-}
-
-#container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.gridchild {
-  margin: 10vh 5vw;
+    height: 100%;
+    width: 100%;
+    transition: $base-transition;
+    background-color: $base-red;
+    position: absolute;
+    top: 0;
 }

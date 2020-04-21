@@ -5,6 +5,7 @@
 <div class="fixed-bg-image">
     <div class="header-overlay"></div>
     <img src="{{url('/images/header-products.jpg')}}" alt="">
+    <h2 class="header-caption">Ons assortiment aan producten</h2>
 </div>
 
 
@@ -17,6 +18,7 @@
             <div class="product-card">
                 <div class="product-image pi-left">
                     <img src=" {{ $item->image }} " alt="">
+                    <div class="product-overlay"></div>
                 </div>
                 <div class="product-slug ps-right">
                     <div class="color-layer"></div>
@@ -29,6 +31,7 @@
             <div class="product-card">
                 <div class="product-image pi-right">
                     <img src=" {{ $item->image }} " alt="">
+                    <div class="product-overlay"></div>
                 </div>
                 <div class="product-slug ps-left">
                     <div class="color-layer"></div>

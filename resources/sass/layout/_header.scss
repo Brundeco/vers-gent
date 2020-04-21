@@ -14,11 +14,21 @@
     object-fit: cover;
 }
 
+.header-caption {
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: $base-white;
+    font-size: 3em;
+}
+
 .header-overlay {
     height: 100vh;
-    opacity: 0.2;
+    opacity: 0.3;
     position: fixed;
-    background: #1f1f1f;
+    background: $base-black;
     width: 100vw;
 }
 
@@ -26,8 +36,8 @@ nav {
     height: 15vh;
     width: 100vw;
     position: fixed;
-    transition: $fast-transition;
-    z-index: 10;
+    transition: $base-transition;
+    z-index: 9;
 }
 
 .nav-wrapper {
@@ -39,12 +49,13 @@ nav {
     margin: 0 auto;
 }
 
-.toggle-menu a {
+.toggle-menu-in-el {
     display: flex;
     width: 65px;
     justify-content: space-between;
     text-transform: uppercase;
     font-size: 0.8em;
+    align-items: center;
 }
 
 .toggle-menu a i {
@@ -89,7 +100,7 @@ nav {
     width: 100vw;
     color: #fff;
     justify-content: center;
-    bottom: 3vh;
+    bottom: 8vh;
     position: fixed;
     font-size: 0.8em;
 }
@@ -115,7 +126,7 @@ nav {
     content: "";
     position: fixed;
     display: block;
-    top: 80vh;
+    bottom: 15vh;
     left: 50%;
     width: 1px;
     height: 70px;
@@ -132,7 +143,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba($color: #000000, $alpha: 0);
+    background-color: rgba($color: #8fb9a8, $alpha: 0);
     z-index: 10;
     transition: $fast-transition;
     pointer-events: none;
@@ -144,9 +155,44 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: $base-yellow;
+    background-color: rgba($color: $base-white, $alpha: 1);
     z-index: 11;
     transition: $smooth-transition;
+}
+
+.pagelinks {
+    position: fixed;
+    top: 30vh;
+    left: 5vw;
+    transition: $smooth-transition;
+    font-size: 1.3em;
+    display: block;
+}
+
+.pagelinks a {
+    color: rgba($color: $dark-green, $alpha: 1);
+    transition: $smooth-transition;
+    margin: 2vh 0;
+    display: none;
+}
+
+.sociallinks {
+    position: fixed;
+    left: 5vw;
+    top: 55vh;
+    padding-top: 2vh;
+    color: rgba($color: $dark-green, $alpha: 0);
+    transition: $smooth-transition;
+    display: block;
+}
+
+.sociallinks a {
+    color: rgba($color: #000000, $alpha: 1);
+    transition: $smooth-transition;
+    margin: 2vh 0;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    display: none;
 }
 
 .toggle-menu-in {
@@ -156,49 +202,76 @@ nav {
 
 .toggle-menu-out {
     color: rgba($color: #000000, $alpha: 0);
-    position: absolute;
+    position: fixed;
     text-transform: uppercase;
     font-size: 0.8em;
     font-weight: 500;
     letter-spacing: 1px;
     padding: 2% 2% 2% 0;
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    left: 5vw;
+    top: 4vw;
+    &:hover .close-bar {
+        transform: rotate(310deg);
+        transition: $slow-transition;
+        opacity: 0.6;
+    }
 }
 
-span {
+.close-bar {
+    width: 20px;
+    height: 1px;
+    background: black;
+}
+
+.close-bar-top {
+    transform: rotate(45deg);
+    transition: $fast-transition;
+}
+
+.close-bar-bottom {
+    transform: rotate(-45deg);
+    transition: $fast-transition;
+}
+
+.strike-through {
     position: relative;
     display: block;
     cursor: pointer;
-  }
-  
-  span:before, span:after {
-    content: '';
+}
+
+.strike-through:before,
+.strike-through:after {
+    content: "";
     position: absolute;
     width: 0%;
     height: 1px;
     top: 50%;
     margin-top: -0.5px;
     background: #000;
-  }
-  
-  span:before {
+}
+
+.strike-through:before {
     left: -2.5px;
-  }
-  span:after {
+}
+.strike-through:after {
     right: 2.5px;
     background: #000;
     transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-  
-  span:hover:before {
+}
+
+.strike-through:hover:before {
     background: #000;
     width: 100%;
     transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-  
-  span:hover:after {
+}
+
+.strike-through:hover:after {
     background: transparent;
     width: 100%;
     transition: 0s;
-  }
-  
+}

@@ -10,6 +10,7 @@
         integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/tgs4bgm.css">
     <link rel="stylesheet" href="https://use.typekit.net/tgs4bgm.css">
+    {{-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css"> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -17,17 +18,30 @@
 <body>
     <header>
         <div class="menu-parent">
-            <div class="menu-child"></div>
+            <div class="menu-child">
+                <div class="pagelinks">
+                    <a class="opacity-link strike-through" href="/">Home</a>
+                    <a class="opacity-link strike-through" href="/products">Producten</a>
+                    <a class="opacity-link strike-through" href="/">Contact</a>
+                </div>
+                <div class="sociallinks">
+                    <a class="opacity-link strike-through" href="">Facebook</a>
+                    <a class="opacity-link strike-through" href="">Instagram</a>
+                </div>
+            </div>
         </div>
+        <a class="toggle-menu-out">
+            <div class="close-bar close-bar-top"></div>
+            <div class="close-bar close-bar-bottom"></div>
+        </a>
         <nav>
             <div class="nav-wrapper">
                 <a class="toggle-menu-in">
                     <div class="toggle-menu-in-el change-on-scroll">
                         <i class="fas fa-bars change-on-scroll"></i>
-                        Menu
+                        <p>Menu</p>
                     </div>
                 </a>
-                <a class="toggle-menu-out"><span>close </span></a>
                 <div class="logo">
                     <a href="/" class="change-on-scroll">VERS</a>
                 </div>
@@ -52,6 +66,8 @@
 
     @yield('content')
 
+    <input type="hidden" id="pageMeta"  value="<?php if(!empty($hide)) { echo $hide;} ?>">
+
     <svg class="cursor" width="280" height="280" viewBox="0 0 280 280">
         <defs>
             <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
@@ -61,6 +77,7 @@
         </defs>
         <circle class="cursor__inner" cx="140" cy="140" r="50" />
     </svg>
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 

@@ -1025,11 +1025,21 @@ h6 {
      object-fit: cover;
 }
 
+.header-caption {
+  position: fixed;
+  top: 50vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+}
+
 .header-overlay {
   height: 100vh;
-  opacity: 0.2;
+  opacity: 0.3;
   position: fixed;
-  background: #1f1f1f;
+  background: #000;
   width: 100vw;
 }
 
@@ -1037,8 +1047,8 @@ nav {
   height: 15vh;
   width: 100vw;
   position: fixed;
-  transition: all 0.2s;
-  z-index: 10;
+  transition: all 0.5s;
+  z-index: 9;
 }
 
 .nav-wrapper {
@@ -1050,12 +1060,13 @@ nav {
   margin: 0 auto;
 }
 
-.toggle-menu a {
+.toggle-menu-in-el {
   display: flex;
   width: 65px;
   justify-content: space-between;
   text-transform: uppercase;
   font-size: 0.8em;
+  align-items: center;
 }
 
 .toggle-menu a i {
@@ -1102,7 +1113,7 @@ nav {
   width: 100vw;
   color: #fff;
   justify-content: center;
-  bottom: 3vh;
+  bottom: 8vh;
   position: fixed;
   font-size: 0.8em;
 }
@@ -1128,7 +1139,7 @@ nav {
   content: "";
   position: fixed;
   display: block;
-  top: 80vh;
+  bottom: 15vh;
   left: 50%;
   width: 1px;
   height: 70px;
@@ -1146,7 +1157,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(143, 185, 168, 0);
   z-index: 10;
   transition: all 0.2s;
   pointer-events: none;
@@ -1158,9 +1169,44 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #F8DC28;
+  background-color: white;
   z-index: 11;
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pagelinks {
+  position: fixed;
+  top: 30vh;
+  left: 5vw;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  font-size: 1.3em;
+  display: block;
+}
+
+.pagelinks a {
+  color: #1c3b2e;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  margin: 2vh 0;
+  display: none;
+}
+
+.sociallinks {
+  position: fixed;
+  left: 5vw;
+  top: 55vh;
+  padding-top: 2vh;
+  color: rgba(28, 59, 46, 0);
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  display: block;
+}
+
+.sociallinks a {
+  color: black;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  margin: 2vh 0;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  display: none;
 }
 
 .toggle-menu-in {
@@ -1170,23 +1216,51 @@ nav {
 
 .toggle-menu-out {
   color: rgba(0, 0, 0, 0);
-  position: absolute;
+  position: fixed;
   text-transform: uppercase;
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 1px;
   padding: 2% 2% 2% 0;
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  left: 5vw;
+  top: 4vw;
 }
 
-span {
+.toggle-menu-out:hover .close-bar {
+  transform: rotate(310deg);
+  transition: all 2s;
+  opacity: 0.6;
+}
+
+.close-bar {
+  width: 20px;
+  height: 1px;
+  background: black;
+}
+
+.close-bar-top {
+  transform: rotate(45deg);
+  transition: all 0.2s;
+}
+
+.close-bar-bottom {
+  transform: rotate(-45deg);
+  transition: all 0.2s;
+}
+
+.strike-through {
   position: relative;
   display: block;
   cursor: pointer;
 }
 
-span:before,
-span:after {
+.strike-through:before,
+.strike-through:after {
   content: "";
   position: absolute;
   width: 0%;
@@ -1196,23 +1270,23 @@ span:after {
   background: #000;
 }
 
-span:before {
+.strike-through:before {
   left: -2.5px;
 }
 
-span:after {
+.strike-through:after {
   right: 2.5px;
   background: #000;
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-span:hover:before {
+.strike-through:hover:before {
   background: #000;
   width: 100%;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-span:hover:after {
+.strike-through:hover:after {
   background: transparent;
   width: 100%;
   transition: 0s;
@@ -1245,8 +1319,27 @@ span:hover:after {
 }
 
 .product-card:hover .color-layer {
-  width: 100%;
+  height: 100%;
   transition: all 0.5s;
+}
+
+.product-card:hover .product-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s;
+}
+
+.product-card:hover .product-image {
+  top: 5%;
+}
+
+.product-card:hover .product-slug {
+  bottom: 0%;
+  transition: all 2s;
+}
+
+.product-card:hover .product-slug h2 {
+  color: white;
+  transition: all 0.2s;
 }
 
 .product-image {
@@ -1255,6 +1348,17 @@ span:hover:after {
   position: absolute;
   top: 0;
   transition: all 0.5s;
+}
+
+.product-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.2s;
+  mix-blend-mode: color;
+  top: 0;
+  left: 0;
 }
 
 .pi-right {
@@ -1273,9 +1377,9 @@ span:hover:after {
 }
 
 .color-layer {
-  width: 0;
-  height: 100%;
-  background: #F8DC28;
+  width: 100%;
+  height: 0%;
+  background: #8FB9A8;
   position: absolute;
   z-index: 1;
   top: 0;
@@ -1309,10 +1413,11 @@ span:hover:after {
   font-weight: 700;
   font-size: 2em;
   z-index: 2;
+  color: black;
 }
 
 .product-detail-section {
-  padding-top: 80vh;
+  padding-top: 100vh;
 }
 
 .fixed-product-detail-image {
@@ -1333,10 +1438,21 @@ span:hover:after {
      object-fit: cover;
 }
 
-.product-detail-wrapper {
-  padding-top: 75vh;
-  min-height: 100vh;
+.product-wrapper {
+  padding: 10vh 10vw 10vw 15vw;
   background-color: #f3f3f3;
+  width: 80%;
+}
+
+.product-wrapper h2 {
+  padding-bottom: 50px;
+  font-size: 3em;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.product-wrapper p {
+  padding-top: 50px;
+  line-height: 2.2em;
 }
 
 .form-wrapper {
@@ -1393,20 +1509,44 @@ body {
   background-color: #f3f3f3;
 }
 
-.dynamic-grid {
-  display: flex;
-  flex-wrap: wrap;
+#grid {
+  padding: 20vh 0;
+  display: grid;
+  grid-template-columns: repeat(8, 0% 1fr);
+  grid-gap: 10px;
+  grid-template-rows: 50vh 50vh;
+}
+
+.g-row-1 {
+  grid-column: 3/9;
+  grid-row: 1;
+  position: relative;
+}
+
+.g-row-2 {
+  margin-top: -10vh;
+  margin-bottom: 10vh;
+  grid-column: 12/16;
+  grid-row: 2;
+  position: relative;
+  position: relative;
+}
+
+.g-row-3 {
+  grid-column: 2/6;
+  grid-row: 2;
+  margin-top: 20vh;
+  position: relative;
 }
 
 .box {
-  max-height: 30vh;
-  max-width: 20vw;
-  margin: 10vh 10vw;
+  height: 100%;
+  width: 100%;
   transition: all 2s;
   background-color: #F8DC28;
   background-position: center;
   background-size: cover;
-  position: relative;
+  position: absolute;
 }
 
 .box img {
@@ -1423,14 +1563,5 @@ body {
   background-color: #C10E1A;
   position: absolute;
   top: 0;
-}
-
-#container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.gridchild {
-  margin: 10vh 5vw;
 }
 
