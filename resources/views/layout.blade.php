@@ -20,13 +20,13 @@
         <div class="menu-parent">
             <div class="menu-child">
                 <div class="pagelinks">
-                    <a class="opacity-link strike-through" href="/">Home</a>
-                    <a class="opacity-link strike-through" href="/products">Producten</a>
-                    <a class="opacity-link strike-through" href="/">Contact</a>
+                    <a class="{{'opacity-link strike-through'}}" href="/">Home</a>
+                    <a class="{{'opacity-link strike-through'}}" href="/products">Producten</a>
+                    <a class="{{'opacity-link strike-through'}}" href="/">Contact</a>
                 </div>
                 <div class="sociallinks">
-                    <a class="opacity-link strike-through" href="">Facebook</a>
-                    <a class="opacity-link strike-through" href="">Instagram</a>
+                    <a class="{{'opacity-link strike-through'}}" href="">Facebook</a>
+                    <a class="{{'opacity-link strike-through'}}" href="">Instagram</a>
                 </div>
             </div>
         </div>
@@ -35,28 +35,46 @@
             <div class="close-bar close-bar-bottom"></div>
         </a>
         <nav>
-            <div class="nav-wrapper">
-                <a class="toggle-menu-in">
-                    <div class="toggle-menu-in-el change-on-scroll">
-                        <i class="fas fa-bars change-on-scroll"></i>
-                        <p>Menu</p>
+            <div class="{{ isset($header) ? 'detail-nav-bg' : 'detail-nav-no-bg' }}">
+                <div class="nav-wrapper">
+                    <a class="toggle-menu-in">
+                        <div class="toggle-menu-in-el change-on-scroll">
+                            @if(isset($header))
+                            <i class="fas fa-bars header-black change-on-scroll"></i>
+                            <p class="header-black change-on-scroll">Menu</p>
+                            @else
+                            <i class="fas fa-bars change-on-scroll"></i>
+                            <p>Menu</p>
+                            @endif
+                        </div>
+                    </a>
+                    <div class="logo">
+                        @if (isset($header))
+                        <a href="/" class="header-black">VERS</a>
+                        @else
+                        <a href="/" class="change-on-scroll">VERS</a>
+                        @endif
                     </div>
-                </a>
-                <div class="logo">
-                    <a href="/" class="change-on-scroll">VERS</a>
-                </div>
-                <div class="socials">
-                    <a href="">
-                        <i class="social-link fab fa-facebook-f change-on-scroll"></i>
-                    </a>
-                    <a href="">
-                        <i class="social-link fab fa-twitter change-on-scroll"></i>
-                    </a>
-                    <a href="">
-                        <i class="social-link fab fa-instagram change-on-scroll"></i>
-                    </a>
+                    <div class="socials">
+                        @if (isset($header))
+                        <a href="">
+                            <i class="social-link fab fa-facebook-f change-on-scroll header-black"></i>
+                        </a>
+                        <a href="">
+                            <i class="social-link fab fa-instagram change-on-scroll header-black"></i>
+                        </a>
+                        @else
+                        <a href="">
+                            <i class="social-link fab fa-facebook-f change-on-scroll"></i>
+                        </a>
+                        <a href="">
+                            <i class="social-link fab fa-instagram change-on-scroll"></i>
+                        </a>
+                        @endif
+                    </div>
                 </div>
             </div>
+
         </nav>
         <div class="scroll-down">
             <p>Scroll voor meer</p>
@@ -66,7 +84,7 @@
 
     @yield('content')
 
-    <input type="hidden" id="pageMeta"  value="<?php if(!empty($hide)) { echo $hide;} ?>">
+    <input type="hidden" id="pageMeta" value="<?php if(!empty($hide)) { echo $hide;} ?>">
 
     <svg class="cursor" width="280" height="280" viewBox="0 0 280 280">
         <defs>
@@ -77,6 +95,12 @@
         </defs>
         <circle class="cursor__inner" cx="140" cy="140" r="50" />
     </svg>
+
+    <footer>
+        <div class="footer-wrapper">
+            <p>© 2020 Vers - Gezonde Commerce</p>
+        </div>
+    </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

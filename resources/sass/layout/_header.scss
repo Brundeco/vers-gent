@@ -38,6 +38,7 @@ nav {
     position: fixed;
     transition: $base-transition;
     z-index: 9;
+    top: 0;
 }
 
 .nav-wrapper {
@@ -64,7 +65,7 @@ nav {
 
 .socials {
     display: flex;
-    width: 80px;
+    width: 50px;
     justify-content: space-between;
 }
 .socials a {
@@ -78,6 +79,20 @@ nav {
 
 .change-on-scroll {
     color: #fff;
+}
+
+.header-black {
+    color: $base-black !important;
+}
+
+.detail-nav-bg {
+    background-color: #fff;
+    height: 10vh;
+}
+
+.detail-nav-no-bg {
+    background-color: rgba($color: #000000, $alpha: 0);
+    height: 10vh;
 }
 
 .logo {
@@ -196,7 +211,6 @@ nav {
 }
 
 .toggle-menu-in {
-    padding: 2%;
     display: block;
 }
 
@@ -216,8 +230,13 @@ nav {
     left: 5vw;
     top: 4vw;
     &:hover .close-bar {
+        transform: rotate(220deg);
+        transition: $base-transition;
+        opacity: 0.6;
+    }
+    &:hover .close-bar-top {
         transform: rotate(310deg);
-        transition: $slow-transition;
+        transition: $base-transition;
         opacity: 0.6;
     }
 }

@@ -10,7 +10,7 @@ let myScrollFunc = () => {
     y >= 50 ? scrollAnimation.style.display = 'none' : scrollAnimation.style.display = 'flex'
     if (y >= 700) {
         navElement.style.background = replaceColor
-        navElement.style.height = '12vh'
+        navElement.style.height = '10vh'
         // navLinks.forEach(element => {
         //     element.style.color = '#000'
         // });

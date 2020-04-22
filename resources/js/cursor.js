@@ -81,7 +81,7 @@ export default class Cursor extends EventEmitter {
             });
     }
     enter() {
-        this.renderedStyles['radius'].current = 40;
+        this.renderedStyles['radius'].current = 30;
         this.tl.restart();
     }
     leave() {

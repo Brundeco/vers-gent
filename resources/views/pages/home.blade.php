@@ -20,37 +20,41 @@
     </div> --}}
     {{-- <div id="container"></div> --}}
     <div id="grid">
-        <div class="g-row-1">
+        <div class="gallery-fx g-row-1">
             <div class="box">
-                <img src="{{ url('images/collage/' . $images[0]->getFilename()) }}">
+                <img src="{{ url('images/collage/' . $images[6]->getFilename()) }}">
+                <img class="top-image-fx" src="{{ url('images/collage/' . $images[6]->getFilename()) }}">
                 <div class="child-box"></div>
             </div>
         </div>
-        <div class="g-row-2">
+        <div class="gallery-fx g-row-2">
             <div class="box">
-                <img src="{{ url('images/collage/' . $images[1]->getFilename()) }}">
+                <img src="{{ url('images/collage/' . $images[7]->getFilename()) }}">
+                <img class="top-image-fx" src="{{ url('images/collage/' . $images[7]->getFilename()) }}">
                 <div class="child-box"></div>
             </div>
         </div>
-        <div class="g-row-3">
+        <div class="gallery-fx g-row-3">
             <div class="box">
                 <img src="{{ url('images/collage/' . $images[2]->getFilename()) }}">
+                <img class="top-image-fx" src="{{ url('images/collage/' . $images[2]->getFilename()) }}">
                 <div class="child-box"></div>
             </div>
         </div>
-        {{--
-            <div class="g-row-3">
-                
+        <div class="gallery-fx g-row-4">
+            <div class="box">
+                <img src="{{ url('images/collage/' . $images[3]->getFilename()) }}">
+                <img class="top-image-fx" src="{{ url('images/collage/' . $images[3]->getFilename()) }}">
+                <div class="child-box"></div>
             </div>
-            <div class="g-row-4">
-                
+        </div>
+        <div class="gallery-fx g-row-5">
+            <div class="box">
+                <img src="{{ url('images/collage/' . $images[8]->getFilename()) }}">
+                <img class="top-image-fx" src="{{ url('images/collage/' . $images[8]->getFilename()) }}">
+                <div class="child-box"></div>
             </div>
-            <div class="g-row-5">
-                
-            </div>
-            <div class="g-row-6">
-                
-            </div> --}}
+        </div>
     </div>
     </div>
 </section>

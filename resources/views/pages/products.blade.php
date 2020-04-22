@@ -18,7 +18,7 @@
             <div class="product-card">
                 <div class="product-image pi-left">
                     <img src=" {{ $item->image }} " alt="">
-                    <div class="product-overlay"></div>
+                    {{-- <div class="product-overlay"></div> --}}
                 </div>
                 <div class="product-slug ps-right">
                     <div class="color-layer"></div>
@@ -31,7 +31,7 @@
             <div class="product-card">
                 <div class="product-image pi-right">
                     <img src=" {{ $item->image }} " alt="">
-                    <div class="product-overlay"></div>
+                    {{-- <div class="product-overlay"></div> --}}
                 </div>
                 <div class="product-slug ps-left">
                     <div class="color-layer"></div>

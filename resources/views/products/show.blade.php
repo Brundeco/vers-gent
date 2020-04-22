@@ -2,21 +2,17 @@
 
 @section('content')
 
-<div class="fixed-product-detail-image">
-  <div class="header-overlay"></div>
-  <img src="{{ $product->image }}" alt="">
-  <h2 class="header-caption"> {{ $product->slug }} </h2>
-</div>
-
-<section class="product-detail-section">
-  <div class="main-wrapper">
-    <div class="product-wrapper">
-      <h2> {{ $product->slug }} </h2>
-      <p> {{ nl2br(e($product->body)) }} </p>
-    </div>
+<div class="product-parent">
+  <div class="product-image-detail">
+    <img src="{{ $product->image }}" alt="">
   </div>
-</section>
-
-@yield('content')
+  <div class="product-color-shape"></div>
+  <h2 class="product-slug-detail"> {{ $product->slug }}</h2>
+  <div class="product-body-detail">
+    <h3>{{ $product->slug }}</h3>
+    <p>{{ nl2br(e($product->body)) }}</p>
+  </div>
+  {{-- <p class="product-body-detail"> {{ nl2br(e($product->body)) }}</p> --}}
+</div>
 
 @endsection

@@ -25450,7 +25450,7 @@ var Cursor = /*#__PURE__*/function (_EventEmitter) {
   }, {
     key: "enter",
     value: function enter() {
-      this.renderedStyles['radius'].current = 40;
+      this.renderedStyles['radius'].current = 30;
       this.tl.restart();
     }
   }, {
@@ -25568,7 +25568,7 @@ var myScrollFunc = function myScrollFunc() {
 
   if (y >= 700) {
     navElement.style.background = replaceColor;
-    navElement.style.height = '12vh'; // navLinks.forEach(element => {
+    navElement.style.height = '10vh'; // navLinks.forEach(element => {
     //     element.style.color = '#000'
     // });
   } else {
