@@ -12,7 +12,10 @@
     <h3>{{ $product->slug }}</h3>
     <p>{{ nl2br(e($product->body)) }}</p>
   </div>
-  {{-- <p class="product-body-detail"> {{ nl2br(e($product->body)) }}</p> --}}
+  <a href="/products" class="back-to-products">
+    <p>Keer terug</p>
+    <div></div>
+  </a>
 </div>
 
 @endsection

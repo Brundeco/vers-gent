@@ -1377,7 +1377,7 @@ footer {
 
 .product-body-detail {
   position: absolute;
-  background: rgba(255, 255, 255, 0.8);
+  background: white;
   width: 62%;
   right: 0;
   left: 10%;
@@ -1398,6 +1398,45 @@ footer {
   font-size: 0.8em;
   font-weight: 100;
   line-height: 2.5em;
+}
+
+.back-to-products {
+  position: fixed;
+  bottom: 10%;
+  width: 130px;
+  height: 15vh;
+}
+
+.back-to-products:hover div {
+  height: 10%;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.back-to-products:hover p {
+  padding-left: 20px;
+  transition: all 0.5s;
+  letter-spacing: 1.5px;
+}
+
+.back-to-products p {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.2s;
+  position: absolute;
+  bottom: 20%;
+}
+
+.back-to-products div {
+  width: 70%;
+  height: 50%;
+  background: #ebf6e3;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  right: -10%;
+  transition: all 0.5s;
 }
 
 .fixed-product-detail-image {
