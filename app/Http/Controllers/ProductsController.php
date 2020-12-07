@@ -48,7 +48,8 @@ class ProductsController extends Controller
         
         return view('products.show', [
             'product' => $product,
-            'header' => 'wtb'
+            'header' => 'wtb',
+            'footer' => 'hide'
         ]);
     }
 

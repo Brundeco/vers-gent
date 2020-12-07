@@ -39,6 +39,9 @@ nav {
     transition: $base-transition;
     z-index: 9;
     top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .nav-wrapper {
@@ -87,12 +90,14 @@ nav {
 
 .detail-nav-bg {
     background-color: #fff;
-    height: 10vh;
+    height: 100%;
+    width: 100%;
 }
 
 .detail-nav-no-bg {
     background-color: rgba($color: #000000, $alpha: 0);
-    height: 10vh;
+    height: 100%;
+    width: 100%;
 }
 
 .logo {
@@ -152,6 +157,43 @@ nav {
     animation: animate 1.6s cubic-bezier(1, 0, 0, 1) infinite;
 }
 
+#animateOnPageTransition {
+    display: flex;
+    width: 100vw;
+    color: #fff;
+    justify-content: center;
+    bottom: 8vh;
+    position: fixed;
+    font-size: 0.8em;
+}
+
+#animateOnPageTransitionChild:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1vh;
+}
+
+#animateOnPageTransitionChild:after {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $base-white;
+    z-index: -1;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: animate 1.6s cubic-bezier(1, 0, 0, 1) infinite;
+    animation-iteration-count: 1;
+    animation-delay: -0.6s;
+}
+
 .menu-parent {
     width: 100vw;
     height: 100vh;
@@ -185,10 +227,11 @@ nav {
 }
 
 .pagelinks a {
-    color: rgba($color: $dark-green, $alpha: 1);
-    transition: $smooth-transition;
+    color: rgba($color: $base-black, $alpha: 1);
+    transition: $fast-transition;
     margin: 2vh 0;
     display: none;
+    position: relative;
 }
 
 .sociallinks {
@@ -221,14 +264,15 @@ nav {
     font-size: 0.8em;
     font-weight: 500;
     letter-spacing: 1px;
-    padding: 2% 2% 2% 0;
     display: none;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     z-index: 11;
     left: 5vw;
     top: 4vw;
+    height: 30px;
+    width: 30px;
+    align-items: flex-start;
     &:hover .close-bar {
         transform: rotate(220deg);
         transition: $base-transition;
@@ -257,40 +301,31 @@ nav {
     transition: $fast-transition;
 }
 
-.strike-through {
-    position: relative;
-    display: block;
-    cursor: pointer;
-}
-
-.strike-through:before,
-.strike-through:after {
-    content: "";
+.link-hover {
+    width: 0px;
+    height: 10px;
+    background: rgba(8, 71, 37, 0.7);
     position: absolute;
-    width: 0%;
-    height: 1px;
-    top: 50%;
-    margin-top: -0.5px;
-    background: #000;
+    left: 0;
+    bottom: -5px;
+    transition: $fast-transition;
 }
 
-.strike-through:before {
-    left: -2.5px;
-}
-.strike-through:after {
-    right: 2.5px;
-    background: #000;
-    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
+@media only screen and (max-width: 992px) {
+    .menu-child {
+        // width: 100vw !important;
+    }
+    
+    .pagelinks {
+        left: 10vw;
+    }
 
-.strike-through:hover:before {
-    background: #000;
-    width: 100%;
-    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
+    .sociallinks {
+        left: 10vw;
+    }
 
-.strike-through:hover:after {
-    background: transparent;
-    width: 100%;
-    transition: 0s;
-}
+    .toggle-menu-out {
+        left: 10vw;
+    }
+    
+  }

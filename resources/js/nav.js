@@ -1,7 +1,6 @@
-let replaceColor = '#1C3B2E'
+let replaceColor = '#EAC718';
 const navElement = document.querySelector("nav");
 const scrollAnimation = document.querySelector('.scroll-down')
-console.log(scrollAnimation)
 let navLinks = document.querySelectorAll('.change-on-scroll')
 
 let myScrollFunc = () => {
@@ -32,21 +31,23 @@ const menuParent = document.querySelector('.menu-parent')
 const menuChild = document.querySelector('.menu-child')
 const bodyEl = document.querySelector('body')
 let opacityLinks = document.querySelectorAll('.opacity-link')
-console.log(opacityLinks)
 
 let fadeInMenu = () => {
-    menuParent.style.background = 'rgba(143, 185, 168, 0.3)'
+
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+
+    menuParent.style.background = 'rgba(255, 255, 255, 0.5)'
     menuParent.style.pointerEvents = 'all'
-    menuChild.style.width = '30vw'
+    vw > 992 ? menuChild.style.width = '30vw' : menuChild.style.width = '100vw'
     toggleMenuInText.style.opacity = '0'
-    toggleMenuOut.style.display = 'block'
+    toggleMenuOut.style.display = 'flex'
     toggleMenuOut.style.color = 'rgba(0,0,0,1)'
     bodyEl.style.overflow = 'hidden'
 
     opacityLinks.forEach(element => {
         element.style.display = 'block'
     });
-    console.log(opacityLinks)
+    // console.log(opacityLinks)
 }
 
 let fadeOutMenu = () => {

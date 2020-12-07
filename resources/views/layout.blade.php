@@ -20,15 +20,17 @@
         <div class="menu-parent">
             <div class="menu-child">
                 <div class="pagelinks">
-                    <a class="{{'opacity-link strike-through'}}" href="/">Home</a>
-                    <a class="{{'opacity-link strike-through'}}" href="/products">Producten</a>
-                    <a class="{{'opacity-link strike-through'}}" href="/">Contact</a>
+                    <a class="{{'opacity-link strike-through page-transition'}}" href="/">Home <span class="link-hover"></span> </a>
+                    <a class="{{'opacity-link strike-through page-transition'}}" href="/products">Producten<span class="link-hover"></span></a>
+                    <a class="{{'opacity-link strike-through page-transition'}}" href="/contact">Contact<span class="link-hover"></span></a>
+                    <a class="{{'opacity-link strike-through page-transition'}}" href="/webshop">Webshop<span class="link-hover"></span></a>
                 </div>
                 <div class="sociallinks">
-                    <a class="{{'opacity-link strike-through'}}" href="">Facebook</a>
-                    <a class="{{'opacity-link strike-through'}}" href="">Instagram</a>
+                    <a class="{{'opacity-link strike-through'}}" href="https://www.facebook.com/versgent" target="_blank">Facebook</a>
+                    <a class="{{'opacity-link strike-through'}}" href="https://www.instagram.com/versgent/" target="_blank">Instagram</a>
                 </div>
             </div>
+
         </div>
         <a class="toggle-menu-out">
             <div class="close-bar close-bar-top"></div>
@@ -57,17 +59,17 @@
                     </div>
                     <div class="socials">
                         @if (isset($header))
-                        <a href="">
+                        <a href="https://www.facebook.com/versgent" target="_blank">
                             <i class="social-link fab fa-facebook-f change-on-scroll header-black"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/versgent/" target="_blank">
                             <i class="social-link fab fa-instagram change-on-scroll header-black"></i>
                         </a>
                         @else
-                        <a href="">
+                        <a href="https://www.facebook.com/versgent" target="_blank">
                             <i class="social-link fab fa-facebook-f change-on-scroll"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/versgent/" target="_blank">
                             <i class="social-link fab fa-instagram change-on-scroll"></i>
                         </a>
                         @endif
@@ -76,6 +78,9 @@
             </div>
 
         </nav>
+        <div id="animateOnPageTransition">
+            <div id="animateOnPageTransitionChild"></div>
+        </div>
         <div class="scroll-down">
             <p>Scroll voor meer</p>
             <div class="loading"></div>
@@ -96,7 +101,7 @@
         <circle class="cursor__inner" cx="140" cy="140" r="50" />
     </svg>
 
-    <footer>
+    <footer class="{{ isset($footer) ? 'hide-footer' : 'show-footer' }}">
         <div class="footer-wrapper">
             <p>© 2020 Vers - Gezonde Commerce</p>
         </div>

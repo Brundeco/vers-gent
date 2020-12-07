@@ -12,10 +12,91 @@ body {
     padding-top: 10vh;
     min-height: 100vh;
     background-color: #f3f3f3;
+    // background-color: #f5f4e5;
+}
+
+.about-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding: 20vh 0;
+}
+
+.about-image-block {
+    width: 48vw;
+    height: 90%;
+    position: relative;
+}
+
+.about-image-block img {
+    position: absolute;
+    width: 90%;
+    height: 95%;
+    top: 0;
+    left: 0;
+}
+
+.child-box-except {
+    height: 100%;
+    width: 100%;
+    transition: $base-transition;
+    background-color: $base-green;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.about-image-block div.about-bg-color-layer {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    bottom: -10%;
+    right: 0;
+    background-color: #eaeaea;
+}
+
+.about-text-block {
+    width: 38vw;
+    height: auto;
+    position: relative;
+    padding-top: 10vh;
+}
+
+.about-text-block h2 {
+    width: 38vw;
+    position: relative;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+.about-text-block p {
+    font-size: 0.8em;
+    font-weight: 100;
+    line-height: 2.5em;
+    white-space: pre-wrap;
+    width: 80%;
+}
+
+.about-text-block a {
+    padding: 10px 25px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid $base-black;
+    font-size: 0.8em;
+    font-weight: 100;
+    margin-top: 50px;
+    &:hover {
+        font-weight: 500;
+        transition: $smooth-transition;
+    }
 }
 
 #grid {
-    padding: 20vh 0 85vh;
+    padding: 0 0 85vh;
     display: grid;
     grid-template-columns: repeat(14, 0% 1fr);
     grid-template-rows: 70vh 70vh 70vh 70vh;
@@ -80,7 +161,7 @@ body {
     height: 100%;
     width: 100%;
     transition: $base-transition;
-    background-color: $base-red;
+    background-color: $base-yellow;
     position: absolute;
     top: 0;
 }
@@ -100,5 +181,59 @@ body {
             opacity: 1;
             transition: $base-transition;
         }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .main-wrapper {
+        // background-color: #eae5ff;
+        padding: 0% 5%;
+    }
+
+    .about-section {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+        margin-bottom: 10vh;
+        box-sizing: border-box;
+    }
+
+    .about-image-block {
+        width: 100%;
+        height: auto;
+        position: static;
+        order: 2;
+    }
+
+    .about-image-block img {
+        position: static;
+    }
+
+    .about-text-block {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 10vh;
+        order: 1;
+        margin-bottom: 10vh;
+    }
+
+    .about-text-block h2 {
+        width: 100%;
+    }
+
+    .about-text-block p {
+        width: 100%;
+    }
+
+    .about-image-block div.about-bg-color-layer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .main-wrapper {
+        background-color: yellow;
     }
 }

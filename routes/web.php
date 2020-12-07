@@ -26,3 +26,9 @@ Route::post('/products', 'ProductsController@store');
 
 Route::get('/products/{id}/edit','ProductsController@edit');
 Route::put('/products', 'ProductsController@update');
+
+Route::get('/contact','ContactController@index');
+Route::post('/contact', 'ContactController@post')->name('contact.post');
+// Route::get('/contact/confirm', 'PageController@submit')->name('contact.confirm');
+
+Route::get('/webshop','WebshopController@index');

@@ -10,6 +10,7 @@ var isInViewport = function (elem) {
 };
 
 var child = document.querySelectorAll('.child-box');
+var childExcept = document.querySelectorAll('.child-box-except');
 let posArray = ['0', '100']
 
 if (child != 'undefined' && child != null) {
@@ -20,6 +21,17 @@ if (child != 'undefined' && child != null) {
                 let propName = posArray[randInt]
                 // console.log(propName)
                 element.style.height = '0';
+            }
+        }, false);
+    });
+
+    childExcept.forEach(element => {
+        window.addEventListener('scroll', function (event) {
+            if (isInViewport(element)) {
+                let randInt = Math.round(Math.random())
+                let propName = posArray[randInt]
+                // console.log(propName)
+                element.style.width = '0';
             }
         }, false);
     });

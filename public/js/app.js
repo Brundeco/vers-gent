@@ -25235,6 +25235,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./nav */ "./resources/js/nav.js");
 
+__webpack_require__(/*! ./productDetail */ "./resources/js/productDetail.js");
+
+__webpack_require__(/*! ./pageTransition */ "./resources/js/pageTransition.js");
+
 __webpack_require__(/*! ./revealPicture */ "./resources/js/revealPicture.js");
 
 __webpack_require__(/*! ./dynamicGrid */ "./resources/js/dynamicGrid.js");
@@ -25479,7 +25483,7 @@ var Cursor = /*#__PURE__*/function (_EventEmitter) {
 
 var cursor = new Cursor(document.querySelector('.cursor'));
 
-_toConsumableArray(document.querySelectorAll('a')).forEach(function (el) {
+_toConsumableArray(document.querySelectorAll('a, input[type=submit]')).forEach(function (el) {
   el.addEventListener('mouseenter', function () {
     return cursor.emit('enter');
   });
@@ -25555,10 +25559,9 @@ if (gridParent != 'undefined' && gridParent != null) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var replaceColor = '#1C3B2E';
+var replaceColor = '#EAC718';
 var navElement = document.querySelector("nav");
 var scrollAnimation = document.querySelector('.scroll-down');
-console.log(scrollAnimation);
 var navLinks = document.querySelectorAll('.change-on-scroll');
 
 var myScrollFunc = function myScrollFunc() {
@@ -25587,20 +25590,19 @@ var menuParent = document.querySelector('.menu-parent');
 var menuChild = document.querySelector('.menu-child');
 var bodyEl = document.querySelector('body');
 var opacityLinks = document.querySelectorAll('.opacity-link');
-console.log(opacityLinks);
 
 var fadeInMenu = function fadeInMenu() {
-  menuParent.style.background = 'rgba(143, 185, 168, 0.3)';
+  var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  menuParent.style.background = 'rgba(255, 255, 255, 0.5)';
   menuParent.style.pointerEvents = 'all';
-  menuChild.style.width = '30vw';
+  vw > 992 ? menuChild.style.width = '30vw' : menuChild.style.width = '100vw';
   toggleMenuInText.style.opacity = '0';
-  toggleMenuOut.style.display = 'block';
+  toggleMenuOut.style.display = 'flex';
   toggleMenuOut.style.color = 'rgba(0,0,0,1)';
   bodyEl.style.overflow = 'hidden';
   opacityLinks.forEach(function (element) {
     element.style.display = 'block';
-  });
-  console.log(opacityLinks);
+  }); // console.log(opacityLinks)
 };
 
 var fadeOutMenu = function fadeOutMenu() {
@@ -25623,6 +25625,63 @@ hiddenFieldVal.value === 'hide' ? navElement.style.opacity = '0' : navElement.st
 
 /***/ }),
 
+/***/ "./resources/js/pageTransition.js":
+/*!****************************************!*\
+  !*** ./resources/js/pageTransition.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var pageTransitionLinks = document.querySelectorAll(".page-transition");
+var animateOnPageTransition = document.querySelector('#animateOnPageTransitionChild');
+console.log(animateOnPageTransition);
+
+var pageTransition = function pageTransition() {
+  animateOnPageTransition.style.animation = 'animate 1.6s cubic-bezier(1, 0, 0, 1)';
+  console.log('body was clicked!');
+};
+
+document.body.addEventListener('click', pageTransition);
+
+/***/ }),
+
+/***/ "./resources/js/productDetail.js":
+/*!***************************************!*\
+  !*** ./resources/js/productDetail.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var productImage = document.querySelector(".product-image-detail");
+var productColorShape = document.querySelector('.product-color-shape');
+var productTitle = document.querySelector('.product-slug-detail');
+var productBody = document.querySelector('.product-body-detail'); // console.log(productImage, productColorShape, productTitle, productBody)
+
+var animatePageElements = function animatePageElements() {
+  // productImage.classList.add = 'bounce-in-top'
+  // productImage.style.animation = 'fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+  productImage.style.animation = 'fade-in-top 2s cubic-bezier(1,0,0,1) both';
+  setTimeout(function () {
+    productColorShape.style.animation = 'fade-in-top 4s cubic-bezier(1,0,0,1) both';
+    productColorShape.style.opacity = '1';
+  }, 300);
+  setTimeout(function () {
+    productBody.style.animation = 'fade-in-left 1s cubic-bezier(1,0,0,1) both';
+    productBody.style.opacity = '1';
+  }, 500);
+  setTimeout(function () {
+    productTitle.style.opacity = '1';
+  }, 700);
+};
+
+var currentUrl = window.location.href;
+
+if (currentUrl.indexOf('products') > -1 && currentUrl.indexOf('show') > -1) {
+  window.onload = animatePageElements();
+}
+
+/***/ }),
+
 /***/ "./resources/js/revealPicture.js":
 /*!***************************************!*\
   !*** ./resources/js/revealPicture.js ***!
@@ -25640,6 +25699,7 @@ var isInViewport = function isInViewport(elem) {
 };
 
 var child = document.querySelectorAll('.child-box');
+var childExcept = document.querySelectorAll('.child-box-except');
 var posArray = ['0', '100'];
 
 if (child != 'undefined' && child != null) {
@@ -25650,6 +25710,16 @@ if (child != 'undefined' && child != null) {
         var propName = posArray[randInt]; // console.log(propName)
 
         element.style.height = '0';
+      }
+    }, false);
+  });
+  childExcept.forEach(function (element) {
+    window.addEventListener('scroll', function (event) {
+      if (isInViewport(element)) {
+        var randInt = Math.round(Math.random());
+        var propName = posArray[randInt]; // console.log(propName)
+
+        element.style.width = '0';
       }
     }, false);
   });
