@@ -31,27 +31,29 @@
                 <textarea name="" id="" cols="30" rows="3" placeholder="Stel je vraag hier" name="message"></textarea>
             </div>
             <div class="contact-input-box">
-               <input type="submit" value="Verzend">
+                <input type="submit" value="Verzend">
             </div>
         </form>
     </div>
 
     <div class="contact-right">
-        <img src="{{ url('/images/contact-page-2.jpg') }}" alt="">
+        <img src="{{ url('/images/contact-page.jpg') }}" alt="">
         <div class="white-overlay">
+        <h2>Openingsuren</h2>
             <div class="hours-open">
-                <h2>Geopend van</h2>
-                <div>
-                    <p>Dinsdag tot vrijdag</p>
-                    <p>09u00 - 13u30 & 15u00 - 19u00</p>
-                </div>
-                <div>
-                    <p>Zaterdag</p>
-                    <p>09u00 - 13u30 & 15u00 - 18u00</p>
-                </div>
-                <div>
-                    <p>Zondag & maandag</p>
-                    <p>Gesloten</p>
+                <div class="center-hours">
+                    <div>
+                        <p>Dinsdag tot vrijdag</p>
+                        <p>09u00 - 13u30 & 15u00 - 19u00</p>
+                    </div>
+                    <div>
+                        <p>Zaterdag</p>
+                        <p>09u00 - 13u30 & 15u00 - 18u00</p>
+                    </div>
+                    <div>
+                        <p>Zondag & maandag</p>
+                        <p>Gesloten</p>
+                    </div>
                 </div>
             </div>
         </div>
