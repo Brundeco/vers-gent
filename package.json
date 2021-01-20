@@ -20,6 +20,6 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "gsap": "^3.2.6"
+        "gsap": "^3.6.0"
     }
 }
