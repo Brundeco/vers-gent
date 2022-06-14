@@ -25816,8 +25816,8 @@ var getMousePos = function getMousePos(e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/vers-gent/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/vers-gent/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/brunodecoene/Documents/GitHub/vers-gent/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/brunodecoene/Documents/GitHub/vers-gent/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
